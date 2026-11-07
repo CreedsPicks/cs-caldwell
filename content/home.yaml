@@ -7,7 +7,7 @@
 title: Home
 
 hero:
-  image: /images/hero-home.jpg
+  image: /images/campus/main-hall.webp
   height: full            # full | tall | medium
   eyebrow: Department of Computer Science & Information Systems
   # Text wrapped in *asterisks* is shown in the gold highlight.
@@ -29,7 +29,7 @@ sections:
     from: achievements.stats
 
   - type: feature
-    image: /images/hero-about.jpg
+    image: /images/campus/alumni-theatre-portrait.webp
     image-alt: Caldwell University campus
     eyebrow: A Message from the Chair
     heading: "“We measure this department by what our students ship, not what they memorize.”"

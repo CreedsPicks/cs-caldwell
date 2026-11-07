@@ -77,7 +77,49 @@ years:
         title: >-
           Trusting Right Predictions for Wrong Reasons: A LIME Based Analysis of Deep Learning
           Interpretability in Lung Cancer Diagnosis
-        venue: "35th SEDE Conference: Software & Data Engineering (SEDE 2026). San Francisco, CA."
+        venue: >-
+          35th SEDE Conference: Software & Data Engineering (SEDE 2026). San Francisco, CA.
+          [arXiv preprint](https://arxiv.org/pdf/2606.16036)
+      - authors:
+          - "**Khatiwada, Prashant**"
+          - Veksler, V. D.
+        year: "2026"
+        title: >-
+          When Random Splitting Misleads: Evaluating Validation Strategies in Financial Machine
+          Learning
+        venue: >-
+          42nd annual conference of the Consortium for Computing Sciences in Colleges, Eastern
+          Region (CCSC Eastern). Bowie, MD.
+      - authors:
+          - "**Kiprop, Peter**"
+          - Veksler, V. D.
+        year: "2026"
+        title: >-
+          Does Structure Help? A Controlled Benchmark of CRAFT-Formatted and Unstructured Prompts
+          Across Two Frontier Language Models
+        venue: >-
+          42nd annual conference of the Consortium for Computing Sciences in Colleges, Eastern
+          Region (CCSC Eastern). Bowie, MD.
+      - authors:
+          - "**Sah, Prashant**"
+          - Veksler, V. D.
+        year: "2026"
+        title: >-
+          Scaling Long-Range Retrieval: A Comparison of LSTM, Transformer, and Mamba on a
+          Needle-in-a-Haystack Task
+        venue: >-
+          42nd annual conference of the Consortium for Computing Sciences in Colleges, Eastern
+          Region (CCSC Eastern). Bowie, MD.
+      - authors:
+          - "**Timalsina, Saugat**"
+          - Veksler, V. D.
+        year: "2026"
+        title: >-
+          Design and Evaluation of a Design Science-Based Multimodal Adaptive Learning Framework
+          Using Physiological Signals and Learning Behaviour Data
+        venue: >-
+          42nd annual conference of the Consortium for Computing Sciences in Colleges, Eastern
+          Region (CCSC Eastern). Bowie, MD.
       - authors:
           - "**Poudel, Samarpan**"
           - Veksler, V. D.
