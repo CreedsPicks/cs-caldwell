@@ -23,15 +23,18 @@ function setupReveal(root) {
     return;
   }
   revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+    (entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+        } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+          // Scrolled back up past it: hide again so the animation replays on the way down.
+          // Elements above the viewport stay visible.
+          entry.target.classList.remove('is-visible');
         }
       }
     },
-    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' },
+    { threshold: [0, 0.15], rootMargin: '0px 0px -60px 0px' },
   );
   targets.forEach((el) => revealObserver.observe(el));
 }

@@ -119,7 +119,7 @@ export function photoGrid(photos, cls = '') {
 export function hero(h = {}) {
   const height = h.height === 'full' ? 'min-h-[100vh]' : h.height === 'medium' ? 'min-h-[56vh]' : 'min-h-[82vh]';
   // *text* in the title becomes the gold highlight
-  const title = mdi(h.title).replace(/<em>/g, '<span class="text-gradient-gold">').replace(/<\/em>/g, '</span>');
+  const title = mdi(h.title).replace(/<em>/g, '<span class="text-gradient-gold italic pr-1">').replace(/<\/em>/g, '</span>');
   const eb = h.eyebrow
     ? `<p class="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-gold-bright)]"><span class="rule-gold"></span>${mdi(h.eyebrow)}</p>`
     : '';
@@ -242,7 +242,7 @@ export const SECTIONS = {
       )
       .join('');
     const btn = s.button
-      ? reveal(a(s.button, 'mt-12 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/60 px-6 py-3 text-sm font-bold uppercase tracking-wide text-[var(--color-gold-bright)] transition-colors hover:bg-[var(--color-gold)]/10'), { delay: 150 })
+      ? reveal(a(s.button, 'mt-12 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/60 px-6 py-3 text-sm font-bold uppercase tracking-wide text-[var(--color-gold-bright)] transition hover:scale-105 hover:bg-[var(--color-gold)]/10'), { delay: 150 })
       : '';
     return darkSection(
       `${reveal(eyebrow(s.eyebrow, { dark: true }) + heading(s.heading, 'max-w-2xl'))}
@@ -609,7 +609,7 @@ export const SECTIONS = {
     const cards = list(s.items)
       .map((ev, i) =>
         reveal(
-          `<div class="flex flex-col gap-5 rounded-2xl border border-black/10 bg-white p-7 sm:flex-row sm:items-center">
+          `<div class="flex flex-col gap-5 rounded-2xl border border-black/10 bg-white p-7 transition-colors duration-300 hover:border-[var(--color-gold)] sm:flex-row sm:items-center">
             <div class="flex h-20 w-20 flex-shrink-0 flex-col items-center justify-center rounded-xl bg-[var(--color-ink)] text-[var(--color-gold-bright)]">
               <span class="text-xs font-bold uppercase tracking-wide">${esc(ev.month)}</span>
               <span class="font-[var(--font-display)] text-2xl font-semibold">${esc(ev.day)}</span>
