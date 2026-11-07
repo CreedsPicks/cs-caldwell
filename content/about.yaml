@@ -1,0 +1,89 @@
+# ---------------------------------------------------------------------------
+# About page (URL: /about)
+# ---------------------------------------------------------------------------
+
+title: About
+
+hero:
+  image: /images/hero-about.jpg
+  height: medium
+  eyebrow: About the Department
+  title: Small enough to know you. Rigorous enough to prepare you.
+  subtitle: >-
+    The Department of Computer Science & Information Systems is Caldwell University's
+    fastest-growing program — and one of its most hands-on.
+
+sections:
+
+  - type: statement
+    eyebrow: Our Mission
+    heading: >-
+      We train technologists who can reason rigorously, build reliably, and lead with integrity in
+      an industry that moves faster every year.
+
+  # Cards are numbered 01, 02, 03… automatically.
+  - type: numbered-cards
+    background: grey
+    items:
+      - title: Rigor Without Gatekeeping
+        detail: >-
+          Difficult courses, taught by faculty who hold office hours like they mean it. We push
+          students hard and refuse to let anyone fall through the cracks.
+      - title: Build, Not Just Study
+        detail: >-
+          Every major writes production-quality code well before senior year — in studio courses,
+          research groups, and paid internships.
+      - title: A Department, Not a Lecture Hall
+        detail: >-
+          A 12:1 student-to-faculty ratio means professors know your name, your project, and your
+          career goals.
+
+  - type: gallery
+    eyebrow: Our Community
+    heading: A department where faculty and students actually know each other.
+    photos:
+      - src: /images/photos/student-gathering.webp
+        alt: A large group of department students gathered together in a campus hall
+        caption: A department that knows each other
+      - src: /images/photos/showcase-conversation.webp
+        alt: A student explaining a data poster to a faculty member
+        caption: One-on-one with faculty
+      - src: /images/photos/lab-class-workstations.webp
+        alt: A full computer lab class with students at workstations
+        caption: Small, focused classes
+
+  # Blank lines inside "body" separate paragraphs.
+  - type: letter
+    eyebrow: A Letter From the Chair
+    heading: Dr. Naomi Castellano, PhD
+    body: |
+      Welcome to the Department of Computer Science & Information Systems. When students ask me
+      what makes Caldwell different, I tell them the truth: we don’t just teach computer science,
+      we practice it alongside our students, every semester.
+
+      Our faculty are researchers and former industry engineers first — people who have shipped
+      real systems and know what a technical interview actually asks. That experience shapes every
+      course we teach, from introductory programming to our senior capstone studio, where teams
+      build working software for outside clients instead of writing another toy assignment.
+
+      It also shows up outside the classroom. Our hackathon and competitive programming teams
+      train year-round, and it shows — this year our students placed ahead of teams from schools
+      many times our size, including several Ivy League programs, at regional hackathons and case
+      competitions. That is not an accident. It is what happens when small class sizes, faculty
+      who are still active practitioners, and students who are hungry to build come together.
+
+      Whether you are a prospective student, a parent, or a future employer, I invite you to see
+      it for yourself. Come to an open house, sit in on a class, or talk to our students directly.
+      I think you’ll leave convinced, the way I was.
+    name: Dr. Naomi Castellano, PhD
+    role: Chair, Computer Science & Information Systems
+
+  - type: timeline
+    eyebrow: Department Timeline
+    heading: Nearly three decades of computing at Caldwell.
+    items:
+      - { year: "1939", label: "Caldwell University founded in Caldwell, New Jersey." }
+      - { year: "1998", label: "Computer Science established as its own degree-granting major." }
+      - { year: "2015", label: "Department expands into Computer Information Systems and launches the Business Systems track." }
+      - { year: "2022", label: "New cybersecurity and applied-AI concentrations added to the B.S. curriculum." }
+      - { year: "2026", label: "Students place first at the Garden State Collegiate Hackathon and open a dedicated Cyber Defense lab." }

@@ -1,0 +1,94 @@
+# ---------------------------------------------------------------------------
+# Home page (URL: /)
+# Sections render top to bottom in the order listed. See README.md for every
+# section type and its fields.
+# ---------------------------------------------------------------------------
+
+title: Home
+
+hero:
+  image: /images/hero-home.jpg
+  height: full            # full | tall | medium
+  eyebrow: Department of Computer Science & Information Systems
+  # Text wrapped in *asterisks* is shown in the gold highlight.
+  title: Where rigorous computer science meets *real ambition*.
+  subtitle: >-
+    Caldwell CS students build production software from freshman year on, and take that
+    discipline straight into hackathons, research labs, and internships — beating teams from far
+    bigger schools along the way.
+  buttons:
+    - { label: Apply Now, link: admissions, style: primary }
+    - { label: Explore Programs, link: programs, style: outline }
+
+sections:
+
+  # Numbers strip that overlaps the bottom of the hero.
+  # The numbers themselves are edited in achievements.yaml (stats).
+  - type: stats
+    style: overlap
+    from: achievements.stats
+
+  - type: feature
+    image: /images/hero-about.jpg
+    image-alt: Caldwell University campus
+    eyebrow: A Message from the Chair
+    heading: "“We measure this department by what our students ship, not what they memorize.”"
+    body: >-
+      Every Caldwell CS and CIS major leaves with a portfolio of real, working software — not
+      just a transcript. Our faculty are researchers and industry veterans first, teachers second,
+      and our small class sizes mean no student ever gets lost in a lecture hall of three hundred.
+    name: Dr. Naomi Castellano, PhD
+    role: Chair, Computer Science & Information Systems
+    button: { label: Read the full letter →, link: about }
+
+  # Program cards pulled from programs.yaml.
+  - type: program-preview
+    eyebrow: Programs
+    heading: Degrees built for how software actually gets made today.
+    from: programs.programs
+    where: { level: Undergraduate }
+    limit: 3
+    card-button: { label: Learn more →, link: programs }
+
+  - type: gallery
+    eyebrow: Life in the Department
+    heading: Labs, showcases, and graduations — this is what four years here looks like.
+    photos:
+      - src: /images/photos/showcase-hall.webp
+        alt: Students presenting research posters to visitors in a crowded showcase hall
+        caption: Research showcase day
+      - src: /images/photos/lab-class-wide.webp
+        alt: Students working at dual-monitor workstations in a computer lab
+        caption: Hands-on lab sessions
+      - src: /images/photos/hardware-lab.webp
+        alt: Students assembling a small robot and electronics on a lab bench
+        caption: Building hardware, not just software
+      - src: /images/photos/research-poster-duo.webp
+        alt: Two students standing beside their research poster
+        caption: Student research, presented
+      - src: /images/photos/commencement-trio.webp
+        alt: Two graduates in caps and gowns with a faculty member in academic regalia
+        caption: Commencement
+
+  # Wins marked "highlight: true" in achievements.yaml.
+  - type: spotlight
+    eyebrow: We Don’t Just Compete
+    heading: Our students have out-built teams from schools ten times our size — including the Ivy League.
+    from: achievements.record
+    where: { highlight: true }
+    button: { label: See every win →, link: achievements }
+
+  # The first four events from events.yaml.
+  - type: event-preview
+    eyebrow: Upcoming
+    heading: Come see the department in person.
+    from: events.events
+    limit: 4
+    button: { label: View all events →, link: events }
+
+  - type: cta
+    heading: Ready to build something that ships?
+    body: Applications for Fall 2027 are open. Visit campus, meet the faculty, and sit in on a real class.
+    buttons:
+      - { label: Apply Now, link: admissions, style: gold }
+      - { label: Schedule a Visit, link: admissions, style: outline }

@@ -1,6 +1,23 @@
-@import "tailwindcss" source("../");
+/* ==========================================================================
+   SOURCE for css/styles.css — the site loads styles.css, not this file.
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..500&family=Manrope:wght@400;500;600;700;800&display=swap');
+   The page templates in js/ use Tailwind utility classes. css/styles.css is
+   plain CSS generated once from this file, so the site needs no build step.
+   You only need to regenerate it if you add a Tailwind class to js/*.js or
+   index.html that isn't already used somewhere. To regenerate:
+
+     npx @tailwindcss/cli@4.2.2 -i css/tailwind.css -o css/styles.css
+
+   Design tokens, fonts, and animations below are hand-written CSS.
+   ========================================================================== */
+
+@import "tailwindcss" source(none);
+@source "../index.html";
+@source "../js/main.js";
+@source "../js/blocks.js";
+@source "../js/effects.js";
+@source "../js/form.js";
+
 
 :root {
   --color-ink: #050505;

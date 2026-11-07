@@ -1,96 +1,89 @@
 # AGENTS.md
 
-Overview of this codebase for future AI agents (and humans) working on it.
+Overview of this codebase for future AI agents (and humans) working on it. README.md has the
+editor-facing guide (YAML syntax, the section type reference, previewing, and deploying).
 
 ## Project Overview
 
 Marketing/informational website for Caldwell University's Department of Computer Science &
-Information Systems. Seven static-content pages, no auth, no database — all content is
-hard-coded in `src/data/*.ts` and rendered by TanStack Start routes.
-
-### Tech Stack
+Information Systems. It is a fully static site: content lives in `content/*.yaml`, and a small
+vanilla-JS renderer (ES modules, no framework) turns it into pages in the browser. No server
+code, no database, no build step. Hosted on Netlify.
 
 | Layer | Technology |
 |---|---|
-| Framework | TanStack Start |
-| Frontend | React 19, TanStack Router v1 (file-based routing) |
-| Build | Vite 7 |
-| Styling | Tailwind CSS 4 + hand-written CSS tokens/animations in `src/styles.css` |
-| Forms | Netlify Forms (static skeleton + AJAX submit) |
-| Language | TypeScript 5.9 (strict mode) |
-| Deployment | Netlify |
+| Content | YAML files in `content/`, Markdown inside text fields |
+| Rendering | Vanilla JS ES modules in `js/`; js-yaml 4.3.2 and marked 15.0.12 vendored |
+| Routing | History API (`/about` → `content/about.yaml`); Netlify `_redirects` sends every URL to `index.html` |
+| Styling | Tailwind 4 utility classes, pre-compiled once to plain CSS in `css/styles.css` |
+| Forms | Netlify Forms (hidden static copy in `contact-form.html` + AJAX submit) |
+| Deployment | Netlify, `publish = "."`, no build command |
+
+This replaced an earlier TanStack Start (React SSR) version; see PLAN.md and git history.
 
 ## Directory Structure
 
 ```
-├── public
-│   ├── contact-form.html   # Static form skeleton so Netlify Forms detects the /admissions form at build time
-│   ├── favicon.svg         # Brand monogram favicon
-│   └── images/             # Generated hero photography (one per page) + a grain texture overlay
-├── src
-│   ├── components
-│   │   ├── ContactForm.tsx # Admissions page contact form (Netlify Forms AJAX submit)
-│   │   ├── Footer.tsx
-│   │   ├── Header.tsx      # Sticky nav, transparent-over-hero → solid-on-scroll
-│   │   ├── Hero.tsx        # Reusable full-bleed parallax hero used by every page
-│   │   └── Reveal.tsx      # IntersectionObserver-driven scroll-reveal wrapper
-│   ├── data
-│   │   ├── achievements.ts # Competition wins + homepage/achievements stats
-│   │   ├── events.ts       # Upcoming events + news items
-│   │   ├── faculty.ts      # Faculty directory entries
-│   │   └── programs.ts     # Degree programs + curriculum philosophy blurbs
-│   ├── hooks
-│   │   └── useParallax.ts  # rAF-driven scroll parallax for Hero background layers
-│   ├── routes
-│   │   ├── __root.tsx      # Document shell + global Header/Footer + fonts/meta
-│   │   ├── index.tsx       # Home (/)
-│   │   ├── about.tsx       # /about
-│   │   ├── programs.tsx    # /programs
-│   │   ├── faculty.tsx     # /faculty
-│   │   ├── achievements.tsx# /achievements
-│   │   ├── events.tsx      # /events
-│   │   └── admissions.tsx  # /admissions (contact form)
-│   ├── router.tsx
-│   └── styles.css          # Color/font/motion design tokens + global styles
-├── netlify.toml
-└── tsconfig.json           # `@/*` → `src/*`
+├── index.html          # Shell: meta tags, fonts, #site-header / #app / #site-footer mount points
+├── content/
+│   ├── site.yaml       # Nav, footer, site name/description
+│   ├── <page>.yaml     # One per page: title, hero, sections[] (+ data lists other pages reuse)
+│   └── accomplishments.yaml  # Data-only (not a page); used via `from: accomplishments`
+├── js/
+│   ├── main.js         # YAML loading + caching, `from:` resolution, router, link interception, error views
+│   ├── blocks.js       # SECTIONS map (one renderer per section type), hero, header, footer, contact form markup
+│   ├── effects.js      # Scroll reveal, parallax, header solid-on-scroll, mobile menu, active nav
+│   ├── form.js         # Netlify Forms AJAX submit
+│   ├── js-yaml.mjs     # vendored
+│   └── marked.esm.js   # vendored
+├── css/
+│   ├── tailwind.css    # Source: tokens, animations, @source list of files to scan
+│   └── styles.css      # Generated plain CSS (committed; the site loads this)
+├── images/             # Hero images (AI-generated), photos/, faculty/, texture-grain.jpg
+├── contact-form.html   # Hidden form so Netlify registers the "contact" form at deploy time
+├── _redirects          # /* → /index.html 200 (real files take precedence)
+└── netlify.toml
 ```
 
 ## Conventions
 
-- **Routing**: one file per route in `src/routes/`, following TanStack Router's flat file-based
-  convention (`about.tsx` → `/about`). No nested/dynamic routes are needed for this site.
-- **Content vs. markup**: page copy that a non-developer might want to edit (program
-  descriptions, faculty bios, event dates, achievement write-ups) lives in `src/data/*.ts`, not
-  inline in JSX, so it can be updated without touching layout code.
-- **Color/type tokens**: defined once as CSS custom properties in `src/styles.css`
-  (`--color-crimson`, `--color-gold`, `--color-ink`, `--color-paper`, `--font-display`,
-  `--font-body`) and consumed via Tailwind arbitrary values, e.g. `text-[var(--color-crimson)]`.
-  Don't hardcode hex values in components — add or reuse a token instead.
-- **Motion**: two mechanisms, both CSS-first —
-  1. `<Reveal>` (`src/components/Reveal.tsx`) toggles a `.is-visible` class via
-     `IntersectionObserver` for fade/rise/scale/stagger entrance animations. Wrap any section
-     content that should animate in on scroll.
-  2. `useParallax` (`src/hooks/useParallax.ts`) sets a `--parallax-y` CSS variable from scroll
-     position for background image drift, used inside `Hero.tsx`.
-  Both respect `prefers-reduced-motion`. Avoid adding a JS animation library (Motion/Framer) —
-  the CSS-driven approach keeps the bundle small and was a deliberate choice for this project.
-- **Images**: all hero photography in `public/images/` was AI-generated (via Netlify AI
-  Gateway / Gemini image model) specifically to avoid using copyrighted photos scraped from the
-  real Caldwell University website. If real campus photography becomes available, swap the
-  files in place (same filenames) rather than restructuring the `Hero` component.
+- **Content vs. code**: all user-visible copy belongs in `content/*.yaml`. Don't hard-code copy
+  in `js/`, except for structural labels inside a component (e.g. "Featured", "Email").
+- **Adding a section type**: add a function to `SECTIONS` in `js/blocks.js` (it takes the
+  section's YAML object and returns an HTML string), then document it in README.md's table.
+  Escape plain text with `esc()`. Use `mdi()` for single-line Markdown and `md()` for
+  multi-paragraph Markdown.
+- **Data shared between pages** sits at the top level of the page file that owns it
+  (`programs.programs`, `events.events`, `achievements.stats`, `achievements.record`). Other
+  pages reference it with `from: file.key` plus optional `where` and `limit`. Don't duplicate
+  it.
+- **Routing**: a URL slug must match `^[a-z0-9-]+$`. A YAML file only counts as a page if it
+  has `hero` or `sections`. `site` is reserved. Anything else renders the 404 view.
+- **Styling**: use Tailwind utilities plus the CSS variables (`--color-crimson`, `--color-gold`,
+  `--color-ink`, `--color-paper`, `--font-display`, `--font-body`). Don't hard-code hex values.
+  **After adding a class that isn't already used anywhere, regenerate `css/styles.css`**
+  (`npx @tailwindcss/cli@4.2.2 -i css/tailwind.css -o css/styles.css`). Otherwise the class
+  has no CSS. Class names must appear as complete literal strings in `js/*.js` or
+  `index.html` for the scanner to find them.
+- **Motion**: CSS-driven. Wrap content with `reveal()` in blocks.js (`.reveal`,
+  `.reveal-scale`, `.reveal-stagger`, toggled to `.is-visible` by effects.js). The hero uses
+  `data-parallax="<speed>"`. Both respect `prefers-reduced-motion`. Don't add an animation
+  library.
+- **Images**: hero photography in `images/` was AI-generated to avoid using copyrighted photos
+  from the real Caldwell site. To swap in real photos, keep the same filenames or update the
+  YAML paths.
+- **Vendored libraries** (`js/js-yaml.mjs`, `js/marked.esm.js`): don't edit them. To upgrade,
+  replace the files with the ESM builds from npm.
 
 ## Forms
 
-`/admissions` has a working contact form. Because TanStack Start renders forms client-side,
-Netlify's build-time form scanner can't see the real React form — `public/contact-form.html`
-is a hidden static duplicate that exists only so Netlify registers the `contact` form name at
-build time. If you add fields to `ContactForm.tsx`, mirror them in `contact-form.html` or
-submissions will be rejected as having unknown fields.
+`contact-form.html` must list exactly the fields that `js/form.js` posts (`form-name`, `subject`,
+`name`, `email`, `interest`, `message`). Otherwise Netlify rejects submissions. The dropdown
+choices come from `content/admissions.yaml` and don't need to be mirrored. Form detection must
+be enabled for the site in the Netlify dashboard.
 
-## What's Not Here
+## Testing
 
-No database, no auth, no CMS. If a future iteration needs an editable events calendar or
-faculty directory, that would be a genuinely new milestone (Netlify DB + an admin route) rather
-than an extension of the current static-data approach — there is no `PLAN.md` for that yet
-since it wasn't part of the original request.
+No test suite. To verify a change, serve the folder with a server that falls back to
+`index.html` (`npx serve -s .`), visit every page, and check the browser console. Content
+errors show up as an in-page error box with the file and line number.

@@ -1,0 +1,115 @@
+# ---------------------------------------------------------------------------
+# Achievements page (URL: /achievements)
+# "stats" and "record" at the bottom of this file are also used by the home
+# page. Student fellowships, hackathons, and publications are in
+# accomplishments.yaml.
+# ---------------------------------------------------------------------------
+
+title: Achievements
+
+hero:
+  image: /images/hero-achievements.jpg
+  height: tall
+  eyebrow: Achievements
+  title: We show up to compete — and we win.
+  subtitle: >-
+    From hackathons to cyber defense, Caldwell CS and CIS students train year-round to compete
+    against schools many times our size. Here is the record to prove it.
+
+sections:
+
+  - type: stats
+    from: achievements.stats
+
+  - type: statement
+    dark: true
+    eyebrow: The Moment
+    heading: At HackNJ, our students out-scored two Ivy League teams in the same judged round.
+    body: >-
+      A four-person Caldwell team walked into the statewide HackNJ invitational as one of the
+      smallest schools in the room. Twenty-four hours later, their submission scored ahead of
+      entries from two Ivy League computer science programs on technical execution and product
+      polish — catching the attention of judges from several regional tech employers.
+
+  - type: gallery
+    eyebrow: On the Showcase Floor
+    heading: Students presenting their work to judges, faculty, and industry guests.
+    photos:
+      - src: /images/photos/showcase-judges.webp
+        alt: A student presenting a research poster to judges
+        caption: Presenting to judges
+      - src: /images/photos/showcase-presentation.webp
+        alt: A student presenting a project to faculty and visitors
+        caption: Defending the work
+      - src: /images/photos/showcase-poster-explain.webp
+        alt: A student pointing out results on a research poster at a conference
+        caption: Research on the road
+
+  - type: record
+    eyebrow: Record
+    heading: A running list of what our students have won.
+    from: achievements.record
+
+  - type: student-accomplishments
+    eyebrow: CSIS Student Accomplishments
+    heading: Fellowships, hackathon wins, and peer-reviewed research — year by year.
+    body: In publication lists, student authors appear in **bold**.
+    from: accomplishments
+
+# ---------------------------------------------------------------------------
+# Headline numbers. Put values in quotes.
+# ---------------------------------------------------------------------------
+stats:
+  - value: "38"
+    label: Teams beaten for first place at Garden State Hackathon
+  - value: "6"
+    label: Regional & state competitions placed in since 2025
+  - value: 94%
+    label: Students with a paid internship before graduation
+  - value: "12:1"
+    label: Student-to-faculty ratio in CS & CIS courses
+
+# ---------------------------------------------------------------------------
+# Competition wins, newest first. "highlight: true" also features the win on
+# the home page.
+# ---------------------------------------------------------------------------
+record:
+  - year: "2026"
+    title: First Place, Garden State Collegiate Hackathon
+    category: Hackathon
+    detail: >-
+      A four-student Caldwell team placed first overall out of 38 teams — beating squads from
+      Princeton and Columbia — with a live disaster-response routing tool built in 24 hours.
+    highlight: true
+  - year: "2026"
+    title: Regional Finalist, ACM ICPC Programming Contest
+    category: Competitive Programming
+    detail: >-
+      Caldwell’s three-person team advanced to the regional finals of the International Collegiate
+      Programming Contest for the second year running.
+  - year: "2025"
+    title: Top 5, Northeast Collegiate Cyber Defense Competition
+    category: Cybersecurity
+    detail: >-
+      The student-run Cyber Defense team finished in the top five of the regional bracket, defending
+      a simulated corporate network against live red-team attacks for eight hours straight.
+  - year: "2025"
+    title: Outscored Two Ivy League Teams at HackNJ
+    category: Hackathon
+    detail: >-
+      At the statewide HackNJ invitational, Caldwell’s team out-scored entries from two Ivy League
+      computer science programs in the judged product round, drawing attention from regional tech
+      recruiters.
+    highlight: true
+  - year: "2025"
+    title: Winner, NJ Collegiate AI Case Competition
+    category: Applied AI
+    detail: >-
+      A team of Computer Information Systems majors won the state case competition for a
+      machine-learning model that predicts hospital readmission risk.
+  - year: Ongoing
+    title: 94% Internship Placement Rate
+    category: Career Outcomes
+    detail: >-
+      Nine in ten CS and CIS majors complete at least one paid internship before graduating, at
+      employers ranging from regional fintech startups to Fortune 500 technology teams.

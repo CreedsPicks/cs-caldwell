@@ -1,0 +1,77 @@
+# ---------------------------------------------------------------------------
+# Faculty page (URL: /faculty)
+# For each person, photo, email, phone, office, and links are optional.
+# Without a photo, a coloured circle with their initials is shown.
+# ---------------------------------------------------------------------------
+
+title: Faculty
+
+hero:
+  image: /images/hero-about.jpg
+  height: medium
+  eyebrow: Faculty & Staff
+  title: Taught by people who still build.
+  subtitle: >-
+    Every full-time faculty member in this department has shipped software, run a research lab,
+    or defended a live network — and brings that experience straight into the classroom.
+
+sections:
+
+  - type: faculty
+    # Optional wide photo under the faculty cards
+    photo:
+      src: /images/photos/teaching-lecture.webp
+      alt: A professor lecturing to students in a computer classroom
+      caption: Faculty who teach every class themselves
+    people:
+      - name: Dr. Vladislav D. Veksler
+        title: Department Chair & Assistant Professor of Computer Science
+        focus: AI, Human-Computer Interaction & Cognitive Modeling
+        bio: >-
+          Dr. Vlad Veksler’s research and teaching span Artificial Intelligence and Machine Learning,
+          UI/UX and Human-Computer Interaction, Human-Agent Teaming, Cybernetics, Cognitive Modeling and
+          Behavioral Simulations, Behavioral Game Theory, AI in Games, and Cognitive Robotics. Students
+          who want to get involved in scientific research in these fields can explore opportunities at
+          the CogAI Research Laboratory.
+        initials: VV
+        photo: /images/faculty/veksler.jpg
+        email: vveksler@caldwell.edu
+        phone: 973-618-3028
+        office: Visceglia Hall 204A
+        links:
+          - label: CogAI Research Laboratory
+            href: https://sites.google.com/caldwell.edu/cogai
+      - name: Dr. Steven E. Kreutzer
+        title: Dean & Associate Professor of Computer Science
+        focus: Software Development & Technology Management
+        bio: >-
+          Dr. Kreutzer holds a B.S. in Computer Science from Union College and M.S. and PhD degrees in
+          Computer Science from Northwestern University. Before academia he built a long industry career
+          in product management, business analysis, software development, and project management at AT&T
+          Bell Laboratories, PricewaterhouseCoopers, and AIG, and led management consulting practices
+          serving senior executives in twelve countries. A college professor since 2012, he has taught
+          more than a dozen computer science courses and takes great joy in seeing his students receive
+          excellent job offers and graduate — in that order.
+        initials: SK
+        photo: /images/faculty/kreutzer.webp
+        email: skreutzer@caldwell.edu
+        phone: 973-618-3646
+      - name: Dr. Salvatore Ferraro
+        title: Associate Professor
+        focus: Management Information Systems & Organizational Leadership
+        bio: >-
+          “Dr. Sal” has worked for companies ranging from family-run businesses to Fortune 500 firms
+          across the manufacturing, telecommunications, healthcare, shipping, and aerospace industries.
+          He earned his degrees while working and raising a family — an Associate of Science in Quality
+          Assurance, a B.S. and Master’s in Management Information Systems, and, twenty-five years into
+          the journey, a doctorate in management information systems and organizational leadership.
+          Outside the classroom he skis six months of the year, rides motorcycles the other six, and has
+          taught both.
+        initials: SF
+        email: sferraro@caldwell.edu
+        phone: 973-618-3376
+        links:
+          - label: DataCamp for Universities
+            href: https://www.datacamp.com/universities
+          - label: DataCamp
+            href: https://datacamp.com/
