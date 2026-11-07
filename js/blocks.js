@@ -434,10 +434,11 @@ export const SECTIONS = {
         const row = (label, value) =>
           `<div class="flex gap-2"><dt class="font-semibold text-[var(--color-ink)]">${label}</dt><dd>${value}</dd></div>`;
         const contact =
-          p.email || p.phone || p.office
+          p.email || p.phone || p.fax || p.office
             ? `<dl class="mt-5 space-y-1 border-t border-black/10 pt-4 text-sm text-[var(--color-ink-soft)]">
                 ${p.email ? row('Email', `<a href="mailto:${esc(p.email)}" class="text-[var(--color-crimson)] hover:underline">${esc(p.email)}</a>`) : ''}
                 ${p.phone ? row('Phone', `<a href="tel:${esc(p.phone)}" class="hover:underline">${esc(p.phone)}</a>`) : ''}
+                ${p.fax ? row('Fax', esc(p.fax)) : ''}
                 ${p.office ? row('Office', mdi(p.office)) : ''}
               </dl>`
             : '';
@@ -446,13 +447,19 @@ export const SECTIONS = {
               .map((l) => `<li><a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer" class="font-semibold text-[var(--color-crimson)] hover:underline">${mdi(l.label)} →</a></li>`)
               .join('')}</ul>`
           : '';
+        const education = list(p.education).length
+          ? `<ul class="mt-4 space-y-1 text-sm text-[var(--color-ink-soft)]/75">${list(p.education)
+              .map((e) => `<li class="flex gap-2"><span class="text-[var(--color-gold)]">•</span><span>${mdi(e)}</span></li>`)
+              .join('')}</ul>`
+          : '';
         return reveal(
           `<div class="h-full rounded-2xl border border-black/10 bg-white p-7 transition-transform hover:-translate-y-1.5">
             ${avatar}
             <h3 class="mt-5 text-lg font-bold text-[var(--color-ink)]">${mdi(p.name)}</h3>
             <p class="mt-1 text-sm font-semibold text-[var(--color-crimson)]">${mdi(p.title)}</p>
-            <p class="mt-1 text-xs font-bold uppercase tracking-wide text-[var(--color-gold)]">${mdi(p.focus)}</p>
-            <div class="mt-4 text-sm leading-relaxed text-[var(--color-ink-soft)]/75 [&>p+p]:mt-3">${md(p.bio)}</div>
+            ${p.focus ? `<p class="mt-1 text-xs font-bold uppercase tracking-wide text-[var(--color-gold)]">${mdi(p.focus)}</p>` : ''}
+            ${p.bio ? `<div class="mt-4 text-sm leading-relaxed text-[var(--color-ink-soft)]/75 [&>p+p]:mt-3">${md(p.bio)}</div>` : ''}
+            ${education}
             ${contact}
             ${links}
           </div>`,
@@ -460,7 +467,9 @@ export const SECTIONS = {
         );
       })
       .join('');
-    return `<section class="py-24"><div class="mx-auto max-w-6xl px-6 sm:px-10">
+    const intro = s.eyebrow || s.heading ? reveal(eyebrow(s.eyebrow) + heading(s.heading, 'mb-10')) : '';
+    return `<section class="py-16"><div class="mx-auto max-w-6xl px-6 sm:px-10">
+      ${intro}
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">${cards}</div>
       ${s.photo ? photoGrid([s.photo], 'mx-auto mt-20 max-w-4xl') : ''}
     </div></section>`;

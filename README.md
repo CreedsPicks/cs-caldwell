@@ -74,7 +74,7 @@ sections freely. Each section has a `type` that decides how it looks:
 | `program-preview` | Program cards (home page) | `eyebrow`, `heading`, `items`, `card-button` |
 | `programs` | All programs grouped by level | `levels`, `items` (`level`, `name`, `credits`, `description`, `tracks`) |
 | `principles` | Dark cards with gold titles | `eyebrow`, `heading`, `items` (`title`, `detail`) |
-| `faculty` | Faculty directory cards | `people` (`name`, `title`, `focus`, `bio`, `initials`, `photo`, `email`, `phone`, `office`, `links`), optional `photo` |
+| `faculty` | Faculty directory cards | `eyebrow`, `heading`, `people` (`name`, `title`, `focus`, `bio`, `education` list, `initials`, `photo`, `email`, `phone`, `fax`, `office`, `links`), optional `photo` |
 | `spotlight` | Featured wins on black | `eyebrow`, `heading`, `items`, `button` |
 | `record` | Full list of wins | `eyebrow`, `heading`, `items` (`year`, `category`, `title`, `detail`, `highlight`) |
 | `student-accomplishments` | Year-by-year student achievements | `eyebrow`, `heading`, `body`, `from: accomplishments` |

@@ -18,11 +18,8 @@ hero:
 sections:
 
   - type: faculty
-    # Optional wide photo under the faculty cards
-    photo:
-      src: /images/photos/teaching-lecture.webp
-      alt: A professor lecturing to students in a computer classroom
-      caption: Faculty who teach every class themselves
+    eyebrow: Our People
+    heading: Full-Time Faculty
     people:
       - name: Dr. Vladislav D. Veksler
         title: Department Chair & Assistant Professor of Computer Science
@@ -75,3 +72,149 @@ sections:
             href: https://www.datacamp.com/universities
           - label: DataCamp
             href: https://datacamp.com/
+      - name: Arnold Toffler
+        title: Associate Professor
+        initials: AT
+        education:
+          - M.P.A., Wharton Graduate Division, University of Pennsylvania, 1974
+          - M.A. Regional Science, University of Pennsylvania, 1974
+          - B.A. English Literature, Lehigh University, 1969
+        email: atoffler@caldwell.edu
+      - name: Dr. Raymond Kasei
+        title: Assistant Professor
+        initials: RK
+        email: rkasei@caldwell.edu
+      - name: Dr. Sushil Poudel
+        title: Assistant Professor
+        initials: SP
+        education:
+          - Ph.D. in Computer Science, Tennessee Tech University
+          - M.E. in Computer Engineering, Tribhuvan University, Kathmandu, Nepal
+          - B.E. in Electronics & Communication Engineering, Tribhuvan University, Kathmandu, Nepal
+
+  - type: faculty
+    eyebrow: Industry Experience in the Classroom
+    heading: Adjunct Faculty
+    people:
+      - name: Richard Campbell
+        title: Adjunct Lecturer
+        focus: Former Director at Charles Schwab · Former Sr. Architect at TD Ameritrade
+        bio: >-
+          Richard Campbell began his teaching career following four decades in software engineering.
+          Originally from Michigan, he earned his bachelor’s degree from The University of Michigan
+          (Go Blue!). He has worked for startups, university research groups, and spent more than 30
+          years at various Wall Street banks, where he was able to transition from programming to
+          managing production trading systems to software architecture and governance. When he is not
+          hacking around with computers, he enjoys watching classic cinema and reading history.
+        initials: RC
+        education:
+          - M.S. Data Science, Eastern University (in progress)
+          - B.S. Computer Science, University of Michigan
+        email: rcampbell@caldwell.edu
+        links:
+          - label: LinkedIn
+            href: https://www.linkedin.com/in/richardiancampbell/
+      - name: Jose Escajadillo
+        title: Adjunct Lecturer
+        initials: JE
+        email: jescajadillo@caldwell.edu
+      - name: Liliana Mannuzza
+        title: Adjunct Lecturer
+        initials: LM
+      - name: Jaswanthi P. Meganathan
+        title: Adjunct Lecturer
+        focus: Cloud Products, AWS Security & Agile Program Management
+        bio: >-
+          Jaswanthi brings more than 15 years of experience managing and delivering cloud products and
+          services across a variety of industries. At Amazon Web Services she leads the strategy and
+          execution of critical AWS Security services, and previously guided the product vision,
+          strategy, and execution for AWS RoboMaker and Amazon SageMaker Ground Truth Plus. Before
+          joining AWS, she consulted with top-tier banks in financial services, crafting FinTech
+          product roadmaps, cloud migration strategies, and Target Operating Models. She is certified
+          in SAFe, ITIL, PMP, CSM, and AWS Cloud Practitioner.
+        initials: JM
+        email: jmeganathan@caldwell.edu
+        office: Albertus Magnus Hall
+      - name: Dipesh Patel
+        title: Adjunct Lecturer
+        initials: DP
+        email: dppatel@caldwell.edu
+      - name: Alphonse Porcello
+        title: Adjunct Lecturer
+        initials: AP
+        email: aporcello@caldwell.edu
+      - name: Michael Sang
+        title: Adjunct Lecturer
+        initials: MS
+        education:
+          - M.B.A., University of Chicago
+          - M.A., Northwestern University
+          - B.A., University of Chicago
+      - name: Michael Slifer
+        title: Adjunct Lecturer
+        initials: MS
+        email: mslifer@caldwell.edu
+      - name: Dr. Bella Veksler
+        title: Adjunct Lecturer & Director of Institutional Research
+        focus: Human-Computer Interaction & Computational Modeling
+        bio: |-
+          Dr. Veksler serves as the Director of Institutional Research at Caldwell University, where she leverages large-scale institutional data to drive strategic decision-making, assessment, and grant support while ensuring reporting compliance. She is also an Adjunct Instructor in Computer Science, teaching Computational Modeling & Simulation and Programming Languages.
+
+          She brings two decades of experience in computational science and scientific data analysis. Her expertise in Human-Computer Interaction and performance modeling is backed by a research toolkit that includes designing empirical behavioral studies with eye tracking, actigraphy, and EEG. While her earlier work centered on visual and sustained attention, today she applies this analytical lens to higher education, focusing on institutional assessment and the optimization of teaching effectiveness.
+        initials: BV
+        education:
+          - Ph.D. Cognitive Science, Rensselaer Polytechnic Institute
+          - M.S. Cognitive Science, Rensselaer Polytechnic Institute
+          - B.A. Computer Science and Psychology (Cognitive Science concentration), Cornell University
+        email: bveksler@caldwell.edu
+        phone: 973-618-3553
+        office: Rosary Hall 218
+        links:
+          - label: Publications on Google Scholar
+            href: https://scholar.google.com/citations?hl=en&user=Hkjyx-cAAAAJ
+      - name: Dr. Alex Zarenin
+        title: Adjunct Lecturer
+        focus: Former Principal Solution Architect, Amazon Web Services
+        initials: AZ
+        education:
+          - Ph.D. Computer Science, New York University
+          - M.S. Information Systems Engineering, Institute of Cybernetics
+          - B.S. Operations Research, Polytechnic University
+        email: azarenin@caldwell.edu
+
+  - type: faculty
+    eyebrow: Keeping the Department Running
+    heading: Staff
+    # Optional wide photo under the faculty cards
+    photo:
+      src: /images/photos/teaching-lecture.webp
+      alt: A professor lecturing to students in a computer classroom
+      caption: Faculty who teach every class themselves
+    people:
+      - name: Carolyn Mitchell
+        title: Administrative Assistant, School of Business & Computer Science
+        bio: >-
+          Carolyn has been part of the Caldwell University community since 2001, serving for more than
+          two decades as Secretary and Administrative Assistant for Psychology & Counseling before
+          joining the School of Business & Computer Science. Since 2013 she has also been a member of
+          the New Jersey Community Emergency Response Team (West Essex).
+        initials: CM
+        education:
+          - B.S. in Education, Psychology minor, Lebanon Valley College
+        email: CMitchell@caldwell.edu
+        phone: 973-618-3255
+        fax: 973-618-3443
+      - name: Melissa Tarantula
+        title: Project Manager & Adjunct Lecturer
+        focus: ACBSP Accreditation & Assessment Coordinator
+        bio: >-
+          Melissa Tarantula is the ACBSP Accreditation and Assessment Coordinator within the School of
+          Business and Computer Science. She helps manage a variety of initiatives within the school,
+          including program development, advisement, assessment and accreditation, recruitment and
+          retention, event planning and operations, and international study trips.
+        initials: MT
+        education:
+          - M.B.A., Global Business concentration, Caldwell University
+          - B.S. in Finance, minors in Spanish and International Business, The Pennsylvania State University (University Park)
+        email: mtarantula@caldwell.edu
+        phone: 973-618-3515
