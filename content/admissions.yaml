@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------------------
+# Admissions page (URL: /admissions)
+# ---------------------------------------------------------------------------
+
+title: Admissions
+
+hero:
+  image: /images/hero-admissions.jpg
+  height: medium
+  eyebrow: Admissions & Visit
+  title: Come see the department for yourself.
+  subtitle: Whether you're applying, transferring, or just curious, here's how to get in the door.
+
+sections:
+
+  # Cards are numbered 01, 02, 03… automatically.
+  - type: numbered-cards
+    items:
+      - title: Apply
+        detail: >-
+          Submit the Caldwell University application with your transcript and a short statement of
+          interest — no separate departmental application needed.
+      - title: Visit
+        detail: >-
+          Tour Aquinas Hall, sit in on a real class, and meet current CS and CIS students at one of
+          our monthly open houses.
+      - title: Talk to Us
+        detail: >-
+          Email or call the department directly — a faculty advisor will help you map out a major,
+          minor, or transfer plan.
+    # Optional wide photo under the cards
+    photo:
+      src: /images/photos/teaching-whiteboard.webp
+      alt: A professor writing on a whiteboard while students follow along
+      caption: Sit in on a real class
+      position: center 20%
+
+  # Contact details beside the contact form.
+  # Form submissions go to Netlify Forms (see README.md → "Contact form").
+  - type: contact
+    eyebrow: Get In Touch
+    heading: Ask us anything — admissions, transfer credits, or what a real week looks like.
+    details:
+      - { label: Office, value: "Aquinas Hall, Room 214 · 120 Bloomfield Ave, Caldwell, NJ 07006" }
+      - { label: Email, value: cs-info@caldwell.edu }
+      - { label: Phone, value: (973) 618-3500 }
+      - { label: Office Hours, value: "Monday–Friday, 9:00 AM – 5:00 PM" }
+    form:
+      # Choices in the "I'm interested in" dropdown. The first one is selected by default.
+      interests:
+        - Undergraduate Admissions
+        - Graduate Admissions
+        - Transfer Credits
+        - Visiting Campus
+        - Something Else
+      name-placeholder: Jordan Alvarez
+      email-placeholder: you@example.com
+      message-placeholder: Tell us a bit about what you're looking for...
+      button: Send Message
+      sending: Sending…
+      success-title: Thank you — we’ll be in touch.
+      success-body: >-
+        A member of the Computer Science & Information Systems team will reach out within two
+        business days.
+      error: >-
+        Something went wrong sending that — please try again or email cs-info@caldwell.edu
+        directly.

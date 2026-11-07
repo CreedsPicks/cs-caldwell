@@ -1,0 +1,4 @@
+# Every page URL (/about, /programs, …) is drawn by index.html + js/main.js.
+# Real files (YAML, images, CSS, JS, contact-form.html) are served as-is,
+# because Netlify only applies this rule when no file exists at the path.
+/*    /index.html    200

@@ -1,7 +1,9 @@
+# Static site: no build step. Netlify publishes the repository as-is.
 [build]
-  command = "pnpm install --frozen-lockfile && pnpm run build"
-  publish = "dist/client"
+  publish = "."
+  command = "echo 'No build step: static site'"
+
+# `netlify dev` serves the folder directly (with forms and redirects emulated).
 [dev]
-  command = "npm run dev"
-  targetPort = 3000
-  port = 8888
+  framework = "#static"
+  publish = "."

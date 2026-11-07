@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+# Site-wide settings: browser tab title, header, navigation, and footer.
+# Page content lives in the other files in this folder (one file per page).
+# Text fields accept Markdown: **bold**, *italic*, [link text](https://…).
+# ---------------------------------------------------------------------------
+
+# Shown in the browser tab after the page title, e.g. "About | <name>"
+name: Caldwell University — Computer Science & Information Systems
+description: >-
+  Caldwell University's Department of Computer Science & Information Systems — undergraduate and
+  graduate programs in AI, cybersecurity, and software engineering in Caldwell, New Jersey.
+
+# Header and footer logo
+monogram: CS
+university: Caldwell University
+department: Computer Science & Information Systems
+
+# Header navigation. "link" is a page name (about → about.yaml, URL /about) or a full URL.
+nav:
+  - { label: About, link: about }
+  - { label: Programs, link: programs }
+  - { label: Faculty, link: faculty }
+  - { label: Achievements, link: achievements }
+  - { label: Events, link: events }
+  - { label: Admissions, link: admissions }
+
+# Highlighted button at the end of the navigation
+nav-button: { label: Apply Now, link: admissions }
+
+footer:
+  blurb: >-
+    Department of Computer Science & Information Systems — training rigorous,
+    creative technologists in Caldwell, New Jersey since 1939.
+  motto: Red · Black · Gold · White
+  columns:
+    - heading: Department
+      links:
+        - { label: About Us, link: about }
+        - { label: Faculty & Staff, link: faculty }
+        - { label: Achievements, link: achievements }
+    - heading: Academics
+      links:
+        - { label: Programs, link: programs }
+        - { label: Events & News, link: events }
+        - { label: Admissions, link: admissions }
+  visit:
+    heading: Visit
+    lines:
+      - Aquinas Hall, Room 214
+      - 120 Bloomfield Ave, Caldwell, NJ 07006
+      - cs-info@caldwell.edu
+      - (973) 618-3500
+  # The current year is added in front automatically: "© 2026 …"
+  copyright: Caldwell University — Department of Computer Science & Information Systems.
+  credit: Built by the CS & Information Systems team.
