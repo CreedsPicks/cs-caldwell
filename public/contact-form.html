@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- This file exists only so Netlify registers the "contact" form at build time. -->
+    <!-- It is never shown to users; the real form lives in src/components/ContactForm.tsx. -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="subject" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="interest">
+        <option>Undergraduate Admissions</option>
+        <option>Graduate Admissions</option>
+        <option>Transfer Credits</option>
+        <option>Visiting Campus</option>
+        <option>Something Else</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

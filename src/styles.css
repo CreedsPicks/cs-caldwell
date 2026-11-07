@@ -1,0 +1,145 @@
+@import "tailwindcss" source("../");
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-ink: #050505;
+  --color-ink-soft: #0e0e0e;
+  --color-crimson: #a6192e;
+  --color-crimson-bright: #c41f36;
+  --color-crimson-deep: #6e0f21;
+  --color-gold: #c9a227;
+  --color-gold-bright: #e0bc4c;
+  --color-gold-soft: #ecdca5;
+  --color-paper: #ffffff;
+  --color-paper-dim: #f4f4f4;
+  --color-white: #ffffff;
+
+  --font-display: 'Fraunces', 'Iowan Old Style', serif;
+  --font-body: 'Manrope', -apple-system, sans-serif;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--color-gold-soft);
+  color: var(--color-ink);
+}
+
+/* ---------- scroll reveal (progressive enhancement via IntersectionObserver) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease-out-soft), transform 0.9s var(--ease-out-soft);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 1s var(--ease-out-soft), transform 1s var(--ease-out-soft);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out-soft), transform 0.7s var(--ease-out-soft);
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 90ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 180ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 270ms; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 360ms; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 450ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-scale, .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- native scroll-driven animation progressive enhancement ---------- */
+@supports (animation-timeline: view()) {
+  .sda-rise {
+    animation: sda-rise-kf linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+  @keyframes sda-rise-kf {
+    from { opacity: 0; transform: translateY(46px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ---------- misc utility ---------- */
+.text-gradient-gold {
+  background: linear-gradient(100deg, var(--color-gold) 0%, var(--color-gold-bright) 45%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.rule-gold {
+  height: 2px;
+  width: 56px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-crimson));
+  border-radius: 2px;
+}
+
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url('/images/texture-grain.jpg');
+  background-size: cover;
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
