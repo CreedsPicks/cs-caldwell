@@ -39,7 +39,7 @@ This replaced an earlier TanStack Start (React SSR) version; see PLAN.md and git
 ├── css/
 │   ├── tailwind.css    # Source: tokens, animations, @source list of files to scan
 │   └── styles.css      # Generated plain CSS (committed; the site loads this)
-├── images/             # Hero images (AI-generated), photos/, faculty/, texture-grain.jpg
+├── images/             # campus/ (hero + campus photos), photos/, faculty/, texture-grain.jpg
 ├── contact-form.html   # Hidden form so Netlify registers the "contact" form at deploy time
 ├── _redirects          # /* → /index.html 200 (real files take precedence)
 └── netlify.toml
@@ -69,9 +69,9 @@ This replaced an earlier TanStack Start (React SSR) version; see PLAN.md and git
   `.reveal-scale`, `.reveal-stagger`, toggled to `.is-visible` by effects.js). The hero uses
   `data-parallax="<speed>"`. Both respect `prefers-reduced-motion`. Don't add an animation
   library.
-- **Images**: hero photography in `images/` was AI-generated to avoid using copyrighted photos
-  from the real Caldwell site. To swap in real photos, keep the same filenames or update the
-  YAML paths.
+- **Images**: all photography is real. Hero images live in `images/campus/` (or reuse a photo
+  from `images/photos/`) and are referenced by path in each page's `hero.image`. Save new photos
+  as `.webp`, max ~2400px wide. The `feature` block crops to 4:5, so pre-crop a portrait copy.
 - **Vendored libraries** (`js/js-yaml.mjs`, `js/marked.esm.js`): don't edit them. To upgrade,
   replace the files with the ESM builds from npm.
 
