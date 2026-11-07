@@ -17,7 +17,7 @@ hero:
     discipline straight into hackathons, research labs, and internships — beating teams from far
     bigger schools along the way.
   buttons:
-    - { label: Apply Now, link: admissions, style: primary }
+    - { label: Apply Now, link: https://www.caldwell.edu/admissions/apply-now/, style: primary }
     - { label: Explore Programs, link: programs, style: outline }
 
 sections:
@@ -90,5 +90,5 @@ sections:
     heading: Ready to build something that ships?
     body: Applications for Fall 2027 are open. Visit campus, meet the faculty, and sit in on a real class.
     buttons:
-      - { label: Apply Now, link: admissions, style: gold }
+      - { label: Apply Now, link: https://www.caldwell.edu/admissions/apply-now/, style: gold }
       - { label: Schedule a Visit, link: admissions, style: outline }
